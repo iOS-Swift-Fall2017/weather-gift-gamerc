@@ -65,8 +65,14 @@ class DetailVC: UIViewController {
         currentImage.image = UIImage(named: locationDetail.currentIcon)
         tableView.reloadData()
         collectionView.reloadData()
-        print("&&&&& updated user interface")
         print(locationDetail.dailyForecastArray)
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
     }
     
 }
@@ -85,10 +91,24 @@ extension DetailVC: CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             locationManager.requestLocation()
         case .denied:
-            print("I'm sorry - can't show location. User has not authorized it")
+            showAlertToPrivacySettings(title: "User has not authorized location services", message: "Select settings below to open device settings and enable location services for this app")
         case .restricted:
-            print("Access Denied. Likely parental controls restrict location services in this app.")
+            showAlert(title: "Location services restricted", message: "It may be that parental controls are restricting location use in this app")
         }
+    }
+    
+    func showAlertToPrivacySettings(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
+            return
+        }
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { value in
+            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(settingsAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -132,12 +152,10 @@ extension DetailVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("$$$$$$$$$$$ HELLO")
         let cell = tableView.dequeueReusableCell(withIdentifier: "DayWeatherCell", for: indexPath) as! DayWeatherCell
         let dailyForecast = locationDetail.dailyForecastArray[indexPath.row]
         let timeZone = locationDetail.timeZone
         cell.update(with: dailyForecast, timeZone: timeZone)
-        print("%%%%%%% tableView method initiated")
         return cell
         
     }

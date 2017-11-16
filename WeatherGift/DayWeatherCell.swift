@@ -36,7 +36,6 @@ class DayWeatherCell: UITableViewCell {
         dayCellMinTemp.text = String(format: "%2.f", dailyForecast.dailyMinTemp) + "°"
         let dateString = dailyForecast.dailyDate.format(timeZone: timeZone, dateFormatter: dateFormatter)
         dayCellWeekday.text = dateString
-        print("******* updated dayCell")
     }
 
 }

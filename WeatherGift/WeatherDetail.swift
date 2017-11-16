@@ -27,8 +27,6 @@ class WeatherDetail: WeatherLocation {
         var hourlyIcon: String
     }
     
-    
-
     var currentTemperature = "--"
     var dailySummary = ""
     var currentIcon = ""
@@ -85,7 +83,6 @@ class WeatherDetail: WeatherLocation {
                     let dailySummary = json["daily"]["data"][day]["summary"].stringValue
                     let newDailyForecast = DailyForecast(dailyMaxTemp: maxTemp, dailyMinTemp: minTemp, dailyDate: dateValue, dailySummary: dailySummary, dailyIcon: icon)
                     self.dailyForecastArray.append(newDailyForecast)
-                    print("^^^^^^^ daily forecast data collected")
                 }
                 
                 let hourlyDataArray = json["hourly"]["data"]

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		211FC7151FAA6E1F009B2C83 /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211FC7141FAA6E1F009B2C83 /* HourlyWeatherCell.swift */; };
+		2123B0311FBE40B400FC1C61 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2123B0301FBE40B400FC1C61 /* AboutVC.swift */; };
 		212DD50F1FA7E38B009B0DCB /* TimeInterval+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212DD50E1FA7E38B009B0DCB /* TimeInterval+format.swift */; };
 		213F5BA91F9C12B400C7DBBC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213F5BA81F9C12B400C7DBBC /* Constants.swift */; };
 		21656C871FABB6DD004C0E0E /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21656C861FABB6DD004C0E0E /* WeatherLocation.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		211FC7141FAA6E1F009B2C83 /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
+		2123B0301FBE40B400FC1C61 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		212DD50E1FA7E38B009B0DCB /* TimeInterval+format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+format.swift"; sourceTree = "<group>"; };
 		213F5BA81F9C12B400C7DBBC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		21656C861FABB6DD004C0E0E /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				218C8AD31F8EC23300CB0788 /* AppDelegate.swift */,
 				21656C861FABB6DD004C0E0E /* WeatherLocation.swift */,
 				21C196691F994EC5001FEFBC /* WeatherDetail.swift */,
+				2123B0301FBE40B400FC1C61 /* AboutVC.swift */,
 				2184F48C1F8EC79F0093BCEF /* PageVC.swift */,
 				218C8AE91F8EC59900CB0788 /* ListVC.swift */,
 				218C8AEB1F8EC5C000CB0788 /* DetailVC.swift */,
@@ -255,6 +258,7 @@
 				212DD50F1FA7E38B009B0DCB /* TimeInterval+format.swift in Sources */,
 				218C8AD41F8EC23300CB0788 /* AppDelegate.swift in Sources */,
 				218C8AEC1F8EC5C000CB0788 /* DetailVC.swift in Sources */,
+				2123B0311FBE40B400FC1C61 /* AboutVC.swift in Sources */,
 				213F5BA91F9C12B400C7DBBC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
